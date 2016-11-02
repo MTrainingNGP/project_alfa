@@ -1,4 +1,7 @@
-<?php require_once("include/header.php");?>
+<?php require_once("include/header.php");
+require_once("include/config.php");
+session_destroy();
+?>
 
   <body>
 
@@ -21,12 +24,29 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="registration.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <li><a href="#" id="login_button"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-
+     <div class="container" style="display:none; height: 200px: width: 150px;" id="login_form">
+       <div class="row">
+         <div class="col-md-8"></div>
+         <div class="col-md-4">
+            <form class="form-signin">
+            <h3 class="text-justify">Login Form</h3>
+                <span id="reauth-email" class="reauth-email"></span>
+                <input type="email" id="email_id" class="form-control" placeholder="Email address" required autofocus>
+                <input type="password" id="password_id" class="form-control" placeholder="Password" required>
+                <button class="btn btn-lg btn-primary btn-block btn-signin" id="button_login" type="submit">Sign in</button>
+            </form>
+            <a href="#" class="forgot-password">
+                Forgot the password?
+            </a>
+        </div><!-- /card-container -->
+         </div>
+       </div>
+    </div><!-- /container -->
     <div class="container">
 
       <div class="starter-template">
@@ -40,10 +60,12 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
+     <script src ="js/jquery.js"></script>
+   <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+    <!-- <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script> -->
+    <script src="js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
   </body>
 </html>
